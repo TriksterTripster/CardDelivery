@@ -25,7 +25,7 @@ public class CardWithDeliveryFormTest {
         $("[data-test-id='date'] input").sendKeys(Keys.DELETE);
 //        $("[data-test-id='date'] input").setValue(date.plusDays(5).format(DateTimeFormatter.ofPattern("dd MM yyyy")));
         $("[data-test-id='date'] input").setValue(date);
-        $("[data-test-id='name'] input").setValue("Иванов Иван");
+        $("[data-test-id='name'] input").setValue("Иванов-Петров Иван");
         $("[data-test-id='phone'] input").setValue("+12345678910");
         $("[data-test-id=agreement]").click();
         $$("button").find(Condition.exactText("Забронировать")).click();
