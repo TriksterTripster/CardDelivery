@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class AppCardDeliveryTaskOneTest {
 
-    private String generateDate(int addDays, String pattern) {
+    public String generateDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
     }
 
@@ -29,10 +29,9 @@ public class AppCardDeliveryTaskOneTest {
         $("[data-test-id='phone'] input").setValue("+79370645456");
         $("[data-test-id='agreement']").click();
         $(".button.button").click();
-        $(".notification_content")
-                .shouldBe(Condition.visible, Duration.ofSeconds(15))
-                .shouldBe(Condition.exactText("Встреча успешно забронирована на " + currentDate));
-
+        $(".notification__content")
+                .shouldBe(Condition.visible, Duration. ofSeconds(15))
+                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentDate));
     }
 }
 
